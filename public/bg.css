@@ -19,6 +19,32 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.18);
     width: 80%;
     max-width: 500px;
+    text-align: center;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 2px solid #74c3da;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 18px;
+    width: 150px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    outline: none;
+}
+
+input[type="number"]::placeholder {
+    color: white;
+    opacity: 0.7;
+}
+
+input[type="number"]:focus {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+    border-color: #ffffff;
 }
 
 button {
@@ -37,10 +63,7 @@ button:hover {
     background-color: #45a049;
 }
 
-input {
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    margin-right: 10px;
-    width: 70%;
+button:focus {
+    outline: none;
+    background-color: #5eb3ea;
 }
