@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Irrigation Dashboard</title>
+  <style>
+    body { font-family: 'Times New Roman', Times, serif; text-align: center; margin-top: 50px; }
+    input { width: 90px; padding: 15px; font-size: 18px; }
+    button { padding: 15px 15px; font-size: 18px; }
+  </style>
+  <link rel="stylesheet" href="bg.css">
+</head>
+<link rel="stylesheet" href="button.css">
+<body>
+  <h1>🌿 Smart Irrigation Dashboard</h1>
+  <p>Set Soil Moisture</p>
+  <input type="number" id="thresholdInput" />
+  <button class="button" onclick="updateThreshold()">Update</button>
+  <p id="status"></p>
+  <head>
+    <style>
+      input[type="number"] {
+        -moz-appearance: textfield;
+        -webkit-appearance: none;
+        appearance: none;
+  
+        border: 2px solid #74c3da;
+        border-radius: 8px;
+        padding: 10px 15px;
+        font-size: 18px;
+        width: 150px;
+      }
+    </style>
+</head>
+  <script>
+    async function updateThreshold() {
+      const val = document.getElementById("thresholdInput").value;
+      const res = await fetch('/threshold', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ threshold: val })
+      });
+      const data = await res.json();
+      document.getElementById("status").innerText = data.message || "Updated.";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+input[type="number"] {
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
+    appearance: none;
+  
+    border: 2px solid #74c3da;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 18px;
+    width: 150px;
+  }
+  
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
